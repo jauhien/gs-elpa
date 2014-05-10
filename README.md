@@ -7,7 +7,7 @@ Installation
 Currently to install gs-elpa you need to add my overlay:
 
 ```
-        layman -a jauhien
+layman -a jauhien
 ```
 
 In the nearest future I'll add this package to the tree so this step will be not needed.
@@ -15,7 +15,7 @@ In the nearest future I'll add this package to the tree so this step will be not
 Then just emerge gs-elpa:
 
 ```
-        emerge -va gs-elpa
+emerge -va gs-elpa
 ```
 
 Note that it uses layman-9999.
@@ -36,9 +36,9 @@ displayed as *g-sorcery*. Then you add this overlay as
 usually and emerge packages you want. It's all you need to do. Example:
 
 ```
-        layman -L
-        layman -a gnu-elpa -a marmalade
-        emerge -va clojure-mode
+layman -L
+layman -a gnu-elpa -a marmalade
+emerge -va clojure-mode
 ```
 
 There are 3 gs-elpa overlays currently: [gnu-elpa](http://elpa.gnu.org/), [marmalade](http://marmalade-repo.org/)
@@ -70,19 +70,19 @@ This is not the recommended way and may be removed in the future.
 Create new user overlay:
 
 ```
-        gs-elpa -o $OVERLAY_DIRECTORY -r gnu-elpa sync
+gs-elpa -o $OVERLAY_DIRECTORY -r gnu-elpa sync
 ```
 
 List packages:
 
 ```
-        gs-elpa -o $OVERLAY_DIRECTORY -r gnu-elpa list
+gs-elpa -o $OVERLAY_DIRECTORY -r gnu-elpa list
 ```
 
 Install any package you want:
 
 ```
-        gs-elpa -o $OVERLAY_DIRECTORY -r gnu-elpa install $PACKAGE
+gs-elpa -o $OVERLAY_DIRECTORY -r gnu-elpa install $PACKAGE
 ```
 
 Repositories you can use are gnu-elpa, marmalade and melpa. You can use them
