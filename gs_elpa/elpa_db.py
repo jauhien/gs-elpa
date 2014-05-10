@@ -7,7 +7,7 @@
     
     ELPA package database
     
-    :copyright: (c) 2013 by Jauhien Piatlicki
+    :copyright: (c) 2013-2014 by Jauhien Piatlicki
     :license: GPL-2, see LICENSE for more details.
 """
 
@@ -109,7 +109,7 @@ class ElpaDBGenerator(DBGenerator):
             #eclass entry
                           'eclasses' : ['g-sorcery', 'gs-elpa'],
             #metadata entries
-                          'maintainer' : [{'email' : 'piatlicki@gmail.com',
+                          'maintainer' : [{'email' : 'jauhien@gentoo.org',
                                            'name' : 'Jauhien Piatlicki'}],
                           'longdescription' : description
                           }

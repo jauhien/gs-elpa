@@ -6,7 +6,7 @@
     <description>packages for emacs</description>
     <homepage>http://elpa.gnu.org/</homepage>
     <owner>
-      <email>piatlicki@gmail.com</email>
+      <email>jauhien@gentoo.org</email>
       <name>Jauhien Piatlicki</name>
     </owner>
     <source type="g-sorcery">gs-elpa gnu-elpa</source>
@@ -16,7 +16,7 @@
     <description>packages for emacs</description>
     <homepage>http://marmalade-repo.org/</homepage>
     <owner>
-      <email>piatlicki@gmail.com</email>
+      <email>jauhien@gentoo.org</email>
       <name>Jauhien Piatlicki</name>
     </owner>
     <source type="g-sorcery">gs-elpa marmalade</source>
@@ -26,7 +26,7 @@
     <description>packages for emacs</description>
     <homepage>http://melpa.milkbox.net</homepage>
     <owner>
-      <email>piatlicki@gmail.com</email>
+      <email>jauhien@gentoo.org</email>
       <name>Jauhien Piatlicki</name>
     </owner>
     <source type="g-sorcery">gs-elpa melpa</source>
