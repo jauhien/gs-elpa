@@ -13,7 +13,7 @@
 
 import sexpdata
 
-from g_sorcery.compatibility import py2k
+from g_sorcery.compatibility import basestring, py2k
 
 if py2k:
     from urlparse import urljoin
@@ -91,6 +91,12 @@ class ElpaDBGenerator(DBGenerator):
             description = "".join([x for x in desc[INFO_DESCRIPTION] if ord(x) in allowed_ords])
             
             deps = desc[INFO_DEPENDENCIES]
+
+            #fix for crappy arhive-contents that have "No commentary."
+            #in place of dependency
+            if isinstance(deps, basestring):
+                deps = []
+
             dependencies = serializable_elist(separator="\n\t")
             for dep in deps:
                 dep = self.convert_dependency([common_config, config],
