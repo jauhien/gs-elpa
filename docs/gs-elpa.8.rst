@@ -11,7 +11,7 @@ manage overlays for ELPA repositories
 	 by Brian Dolbec.
 :Date:   2014-05-10
 :Copyright: Copyright (c) 2013-2014 Jauhien Piatlicki, License: GPL-2
-:Version: 0.1
+:Version: 0.1.1
 :Manual section: 8
 :Manual group: g-sorcery
 
@@ -45,7 +45,7 @@ There are two ways of using **gs-elpa**:
       displayed as *g-sorcery*. Then you add this overlay as
       usual. It's all you need to do and it's the recommended way of
       using **gs-elpa**.
-      
+
     * use it as stand-alone tool
 
       In this case you should create an overlay (see **portage** documentation), sync it and populate
