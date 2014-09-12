@@ -31,4 +31,14 @@
     </owner>
     <source type="g-sorcery">gs-elpa melpa</source>
 </repo>
+<repo quality="experimental" status="unofficial">
+    <name>melpa-stable</name>
+    <description>packages for emacs</description>
+    <homepage>http://melpa-stable.milkbox.net</homepage>
+    <owner>
+      <email>jauhien@gentoo.org</email>
+      <name>Jauhien Piatlicki</name>
+    </owner>
+    <source type="g-sorcery">gs-elpa melpa-stable</source>
+</repo>
 </repositories>

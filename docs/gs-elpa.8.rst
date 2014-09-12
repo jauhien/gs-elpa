@@ -60,7 +60,8 @@ OPTIONS
     **default_overlay** entry in a backend config.
 
 **--repository** *REPO*, **-r** *REPO*
-    Repository name. Can be one of **gnu-elpa**, **marmalade**, **melpa**.
+    Repository name. Can be one of **gnu-elpa**, **marmalade**,
+    **melpa**, **melpa-stable**.
 
 COMMANDS
 ========
@@ -99,7 +100,7 @@ Using gs-elpa with layman
     **layman -L**
 
     Find there an overlay you need (there are
-    3 gs-elpa overlays currently: gnu-elpa, marmalade and melpa).
+    3 gs-elpa overlays currently: gnu-elpa, marmalade, melpa and melpa-stable).
     Add, e.g.
 
     **layman -a gnu-elpa -a marmalade**
@@ -121,7 +122,7 @@ Generating user ebuilds in user overlay
 
     **gs-elpa -o** *OVERLAY_DIRECTORY* **-r gnu-elpa** **install** *PACKAGE*
 
-    Repositories you can use are gnu-elpa, marmalade and melpa. You can use them
+    Repositories you can use are gnu-elpa, marmalade, melpa and melpa-stable. You can use them
     all in one overlay. Note, that if you call **generate-tree** command your overlay
     will be wiped and overlay tree for a given repository will be generated. Be careful!
 
@@ -133,7 +134,7 @@ NOTES
 BUGS
 ====
 
-Some packages in **marmalade** and **melpa** depend on packages from gnu-elpa. **install** and **generate**
+Some packages in **marmalade** , **melpa**, **melpa-stable** depend on packages from gnu-elpa. **install** and **generate**
 commands will fail on them as dependencies between overlays are not supported currently. So the
 recommended way of using gs-elpa is using it with layman. Even doing so you should always add
 gnu-elpa repository: **layman -a gnu-elpa**.

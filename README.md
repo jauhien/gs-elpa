@@ -37,8 +37,8 @@ layman -a gnu-elpa -a marmalade
 emerge -va clojure-mode
 ```
 
-There are 3 gs-elpa overlays currently: [gnu-elpa](http://elpa.gnu.org/), [marmalade](http://marmalade-repo.org/)
-and [melpa](http://melpa.milkbox.net/).
+There are 3 gs-elpa overlays currently: [gnu-elpa](http://elpa.gnu.org/), [marmalade](http://marmalade-repo.org/),
+[melpa](http://melpa.milkbox.net/) and [melpa-stable](http://melpa-stable.milkbox.net/).
 
 When using **gs-elpa** with layman you can populate overlay only with packages you want.
 To do so you should add a section named gs-elpa to */etc/g-sorcery/g-sorcery.cfg*.
@@ -81,7 +81,7 @@ Install any package you want:
 gs-elpa -o $OVERLAY_DIRECTORY -r gnu-elpa install $PACKAGE
 ```
 
-Repositories you can use are gnu-elpa, marmalade and melpa. You can use them
+Repositories you can use are gnu-elpa, marmalade, melpa and melpa-stable. You can use them
 all in one overlay. Note, that if you call **generate-tree** command your overlay
 will be wiped and overlay tree for a given repository will be generated. Be careful!
 
