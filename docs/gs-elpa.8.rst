@@ -11,7 +11,7 @@ manage overlays for ELPA repositories
 	 by Brian Dolbec.
 :Date:   2014-05-10
 :Copyright: Copyright (c) 2013-2014 Jauhien Piatlicki, License: GPL-2
-:Version: 0.1.1
+:Version: 0.1.2
 :Manual section: 8
 :Manual group: g-sorcery
 

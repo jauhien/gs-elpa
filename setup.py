@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name          = 'gs-elpa',
-      version       = '0.1.1',
+      version       = '0.1.2',
       description   = 'g-sorcery backend for elisp packages',
       author        = 'Jauhien Piatlicki',
       author_email  = 'jauhien@gentoo.org',

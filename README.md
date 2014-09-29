@@ -4,18 +4,9 @@ This is [g-sorcery](https://github.com/jauhien/g-sorcery) backend for elisp pack
 Installation
 ======================
 
-Currently gs-elpa is not keyworded, so [add keywords](https://bitbucket.org/mgorny/flaggie/), then install it:
-
-```
-flaggie app-portage/gs-elpa '+**'
-```
-
 ```
 emerge -va gs-elpa
 ```
-
-Note that it needs layman-9999.
-
 
 Usage
 ======================
@@ -29,11 +20,15 @@ It the the recommend way and I strongly suggest it.
 Then you should just run `layman -L` as
 root and find an overlay you want. Type of overlay will be
 displayed as *g-sorcery*. Then you add this overlay as
-usually and emerge packages you want. It's all you need to do. Example:
+usually and emerge packages you want. Always add gnu-elpa overlay first,
+as other overlays depend on it.
+
+It's all you need to do. Example:
 
 ```
 layman -L
-layman -a gnu-elpa -a marmalade
+layman -a gnu-elpa
+layman -a melpa-stable
 emerge -va clojure-mode
 ```
 
@@ -54,7 +49,7 @@ package_manager=portage
 marmalade_packages = clojure-mode clojurescript-mode
 ```
 Note, that some overlays may depend on other overlays, in this case you'll need to add those
-dependencies first (I'd recommend to always add the whole gnu-elpa overlay).
+dependencies first (always add the whole gnu-elpa overlay).
 
 
 ** Using gs-elpa as stand-alone tool **
