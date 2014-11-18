@@ -1,19 +1,17 @@
 This is [g-sorcery](https://github.com/jauhien/g-sorcery) backend for elisp packages.
 
 
-Installation
-======================
+# Installation
 
 ```
 emerge -va gs-elpa
 ```
 
-Usage
-======================
+# Usage
 
 There are two ways of using **gs-elpa**
 
-** Using gs-elpa with [layman](https://wiki.gentoo.org/wiki/Layman) **
+## Using gs-elpa with [layman](https://wiki.gentoo.org/wiki/Layman)
 
 It the the recommend way and I strongly suggest it.
 
@@ -52,7 +50,7 @@ Note, that some overlays may depend on other overlays, in this case you'll need 
 dependencies first (always add the whole gnu-elpa overlay).
 
 
-** Using gs-elpa as stand-alone tool **
+## Using gs-elpa as stand-alone tool
 
 In this case you should create an overlay (see **portage** documentation), sync it and populate
 it with one or more ebuilds. Then ebuilds could be installed by emerge or by **gs-elpa** tool.
