@@ -9,7 +9,7 @@ manage overlays for ELPA repositories
 :Author: Written by Jauhien Piatlicki <jauhien@gentoo.org>. GSoC idea
 	 and mentorship by Rafael Martins. Lots of help and improvements
 	 by Brian Dolbec.
-:Date:   2014-05-10
+:Date:   2014-11-22
 :Copyright: Copyright (c) 2013-2014 Jauhien Piatlicki, License: GPL-2
 :Version: 0.1.2
 :Manual section: 8
@@ -108,6 +108,12 @@ Using gs-elpa with layman
     Emerge any package from it, e.g.
 
     **emerge -va clojure-mode**
+
+Generating ebuilds for packages that are already in the tree
+    Ebuilds for the packages available in the tree are excluded from
+    the generation. To enable their generation you need to edit
+    **/etc/g-sorcery/gs-elpa.json** file: remove packages you need
+    from the *exclude* list in the *common_config* inside this config file.
 
 Generating user ebuilds in user overlay
     Create new user overlay. Run

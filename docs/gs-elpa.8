@@ -1,6 +1,6 @@
 .\" Man page generated from reStructuredText.
 .
-.TH GS-ELPA 8 "2014-05-10" "0.1.1" "g-sorcery"
+.TH GS-ELPA 8 "2014-11-22" "0.1.2" "g-sorcery"
 .SH NAME
 gs-elpa \- manage overlays for ELPA repositories
 .
@@ -124,6 +124,12 @@ Add, e.g.
 Emerge any package from it, e.g.
 .sp
 \fBemerge \-va clojure\-mode\fP
+.TP
+.B Generating ebuilds for packages that are already in the tree
+Ebuilds for the packages available in the tree are excluded from
+the generation. To enable their generation you need to edit
+\fB/etc/g\-sorcery/gs\-elpa.json\fP file: remove packages you need
+from the \fIexclude\fP list in the \fIcommon_config\fP inside this config file.
 .TP
 .B Generating user ebuilds in user overlay
 Create new user overlay. Run
