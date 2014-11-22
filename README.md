@@ -79,3 +79,11 @@ all in one overlay. Note, that if you call **generate-tree** command your overla
 will be wiped and overlay tree for a given repository will be generated. Be careful!
 
 See man page of **gs-elpa** for further information.
+
+## Notes
+
+* **Generation of packages already available in the portage tree**:
+    Ebuilds for the packages available in the tree are excluded from
+    the generation. To enable their generation you need to edit
+    `/etc/g-sorcery/gs-elpa.json` file: remove packages you need
+    from the `exclude` list in the `common_config` inside this config file.
