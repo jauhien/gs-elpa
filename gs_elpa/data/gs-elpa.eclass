@@ -46,9 +46,17 @@ gs-elpa_src_unpack() {
 }
 
 gs-elpa_src_compile() {
+	local directories=""
 	rm -f ${PN}-pkg.el || die
 	elisp-make-autoload-file || die
-	elisp_src_compile || die
+	for i in `find . -name "*.el" -print`; do
+		directories+=" -L "
+		directories+="$(dirname $i)"
+	done
+	BYTECOMPFLAGS+="${directories}"
+	ebegin "Compiling GNU Emacs Elisp files"
+	${EMACS} ${EMACSFLAGS} ${BYTECOMPFLAGS} --eval '(byte-recompile-directory "./" 0 t)'
+	eend $? "elisp-compile: batch-byte-compile failed" || die
 }
 
 gs-elpa_src_install() {
@@ -59,5 +67,7 @@ gs-elpa_src_install() {
 EOF
 	elisp-site-file-install ${sitefile} || die
 	rm -f ${sitefile} || die
-	elisp_src_install || die
+
+	insinto "${SITELISP}/${PN}"
+	doins -r ./*
 }
