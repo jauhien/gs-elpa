@@ -49,11 +49,10 @@ gs-elpa_src_compile() {
 	local directories=""
 	rm -f ${PN}-pkg.el || die
 	elisp-make-autoload-file || die
-	for i in `find . -name "*.el" -print`; do
-		directories+=" -L "
-		directories+="$(dirname $i)"
+	directories=`find . -name "*.el" | xargs -I{} dirname {} | sort | uniq`
+	for i in ${directories}; do
+		BYTECOMPFLAGS+=" -L ${i}"
 	done
-	BYTECOMPFLAGS+="${directories}"
 	ebegin "Compiling GNU Emacs Elisp files"
 	${EMACS} ${EMACSFLAGS} ${BYTECOMPFLAGS} --eval '(byte-recompile-directory "./" 0 t)'
 	eend $? "elisp-compile: batch-byte-compile failed" || die
