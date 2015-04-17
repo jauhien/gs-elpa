@@ -4,10 +4,10 @@
 """
     elpa_db.py
     ~~~~~~~~~~
-    
+
     ELPA package database
-    
-    :copyright: (c) 2013-2014 by Jauhien Piatlicki
+
+    :copyright: (c) 2013-2015 by Jauhien Piatlicki
     :license: GPL-2, see LICENSE for more details.
 """
 
@@ -60,7 +60,15 @@ class ElpaDBGenerator(DBGenerator):
             raise SyncError('sync failed: ' \
                         + repo_uri + ' bad archive contents format')
 
-        pkg_db.add_category('app-emacs')
+        category = 'app-emacs'
+        pkg_db.add_category(category)
+        common_data = {'eclasses' : ['g-sorcery', 'gs-elpa'],
+                       'maintainer' : [{'email' : 'jauhien@gentoo.org',
+                                        'name' : 'Jauhien Piatlicki'}],
+                       'homepage' : repo_uri,
+                       'repo_uri' : repo_uri
+                   }
+        pkg_db.set_common_data(category, common_data)
 
         PKG_INFO = 2
         PKG_NAME = 0
@@ -72,7 +80,7 @@ class ElpaDBGenerator(DBGenerator):
 
         DEP_NAME = 0
         #DEP_VERSION = 1 #we do not use it at the moment
-        
+
         for entry in sexpdata.cdr(archive_contents):
             desc = entry[PKG_INFO].value()
             realname = entry[PKG_NAME].value()
@@ -87,9 +95,9 @@ class ElpaDBGenerator(DBGenerator):
             allowed_ords = set(range(ord('a'), ord('z'))) \
                     | set(range(ord('A'), ord('Z'))) | \
                     set(range(ord('0'), ord('9'))) | set(list(map(ord,
-                    ['+', '_', '-', ' ', '.', '(', ')', '[', ']', '{', '}', ','])))            
+                    ['+', '_', '-', ' ', '.', '(', ')', '[', ']', '{', '}', ','])))
             description = "".join([x for x in desc[INFO_DESCRIPTION] if ord(x) in allowed_ords])
-            
+
             deps = desc[INFO_DEPENDENCIES]
 
             #fix for crappy arhive-contents that have "No commentary."
@@ -103,20 +111,13 @@ class ElpaDBGenerator(DBGenerator):
                                     dep[DEP_NAME].value(), external = False)
                 if dep:
                     dependencies.append(dep)
-                
+
             properties = {'source_type' : source_type,
                           'description' : description,
                           'dependencies' : dependencies,
                           'depend' : dependencies,
                           'rdepend' : dependencies,
-                          'homepage' : repo_uri,
-                          'repo_uri' : repo_uri,
                           'realname' : realname,
-            #eclass entry
-                          'eclasses' : ['g-sorcery', 'gs-elpa'],
-            #metadata entries
-                          'maintainer' : [{'email' : 'jauhien@gentoo.org',
-                                           'name' : 'Jauhien Piatlicki'}],
                           'longdescription' : description
                           }
             pkg_db.add_package(pkg, properties)
