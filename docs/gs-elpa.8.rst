@@ -145,6 +145,13 @@ commands will fail on them as dependencies between overlays are not supported cu
 recommended way of using gs-elpa is using it with layman. Even doing so you should always add
 gnu-elpa repository: **layman -a gnu-elpa**.
 
+If you ever find bugs like https://github.com/jauhien/gs-elpa/issues/6,
+you can exclude packages from dependencies adding their name to the "external" object
+in the "common-config" section of `/etc/g-sorcery/gs-elpa.json` config file.
+For the example issue it would be (together with already added packages):
+
+	"external": {"emacs": "virtual/emacs", "cl-lib": "virtual/emacs", "eieio": "virtual/emacs"}
+
 SEE ALSO
 ========
 

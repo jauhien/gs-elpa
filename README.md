@@ -87,3 +87,11 @@ See man page of **gs-elpa** for further information.
     the generation. To enable their generation you need to edit
     `/etc/g-sorcery/gs-elpa.json` file: remove packages you need
     from the `exclude` list in the `common_config` inside this config file.
+
+* **Excluding packages from dependencies**:
+    If you ever find bugs like [this one](https://github.com/jauhien/gs-elpa/issues/6),
+    you can exclude packages from dependencies adding their name to the "external" object
+    in the "common-config" section of `/etc/g-sorcery/gs-elpa.json` config file.
+    For the example issue it would be (together with already added packages):
+
+	"external": {"emacs": "virtual/emacs", "cl-lib": "virtual/emacs", "eieio": "virtual/emacs"}

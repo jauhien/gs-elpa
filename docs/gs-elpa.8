@@ -159,6 +159,16 @@ Some packages in \fBmarmalade\fP , \fBmelpa\fP, \fBmelpa\-stable\fP depend on pa
 commands will fail on them as dependencies between overlays are not supported currently. So the
 recommended way of using gs\-elpa is using it with layman. Even doing so you should always add
 gnu\-elpa repository: \fBlayman \-a gnu\-elpa\fP\&.
+.sp
+If you ever find bugs like \fI\%https://github.com/jauhien/gs\-elpa/issues/6\fP,
+you can exclude packages from dependencies adding their name to the "external" object
+in the "common\-config" section of \fI/etc/g\-sorcery/gs\-elpa.json\fP config file.
+For the example issue it would be (together with already added packages):
+.INDENT 0.0
+.INDENT 3.5
+"external": {"emacs": "virtual/emacs", "cl\-lib": "virtual/emacs", "eieio": "virtual/emacs"}
+.UNINDENT
+.UNINDENT
 .SH SEE ALSO
 .sp
 \fBgs\-pypi\fP(8), \fBg\-sorcery.cfg\fP(8), \fBportage\fP(5), \fBemerge\fP(1), \fBlayman\fP(8)
